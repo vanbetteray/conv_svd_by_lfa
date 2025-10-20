@@ -16,6 +16,8 @@ For more details see https://arxiv.org/pdf/2506.05617
 
 ![Effect of boundary conditions for increasing input sizes (n = 4, 8, 32; left to right). The number of input and output
 channels is fixed to 16](ims/boundary_cond.png)
+Effect of boundary conditions for increasing input sizes (n = 4, 8, 32; left to right). The number of input and output
+channels is fixed to 16.
 
 ## Requirements
 Running with Python3.6 and CUDA Version: 11.0
