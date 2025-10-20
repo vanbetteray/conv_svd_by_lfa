@@ -51,6 +51,8 @@ python3 main.py --method expl
 
 If you use thies code in your research, please cite:
 
+pgsql
+
 @misc{vanbetteray2025lfaappliedcnnsefficient,
       title={LFA applied to CNNs: Efficient Singular Value Decomposition of Convolutional Mappings by Local Fourier Analysis}, 
       author={Antonia van Betteray and Matthias Rottmann and Karsten Kahl},
