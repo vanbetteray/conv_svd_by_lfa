@@ -1,16 +1,17 @@
 # SVD_by_LFA
-Singular value decomposition of convolutional layer by local Fourier analysis.
+## Singular value decomposition of convolutional layer by local Fourier analysis.
 
 ## Description
-This repository provides a framework to efficiently calculate the singular values (SVD) (and if needed singular vectors) of 
-convolutional layers via local Fourier analysis (LFA). While the explicit calculation of the SVD of convolutional layers
-is infeasible and computationally limited since the corresponding weight matrix grows quickly for increasing input dimensions. 
-Transferring the weight tensor into the Fourier domain allows for efficient SVD computation. Note, that this requires periodic
+This repository provides an eficient framework for computing the singular values (SVD) and optionally the singular vectors of 
+convolutional layers using local Fourier analysis (LFA). 
+
+The direct calculation of the SVD of a convolutional layer is typically infeasible because the corresponding weight matrix grows rapidly with increasing input dimensions. 
+B< transferring the convolutional weight tensor into the Fourier domain, this Framework enables efficient and scalabel SVD computation. Note, that this requires periodic
 boundary conditions (periodic padding) instead of Dirichlet boundary conditions (zero padding). 
-For growing input dimensions the influence of boundary conditions becomes negligible (see Fig. below).
+For large input dimensions the influence of boundary conditions becomes negligible (see Figure below).
 
+For theoretical background and derivations visit https://arxiv.org/pdf/2506.05617
 
-For more details see https://arxiv.org/pdf/2506.05617
 
 ![Effect of boundary conditions for increasing input sizes (n = 4, 8, 32; left to right). The number of input and output
 channels is fixed to 16](ims/boundary_cond.png)
@@ -20,6 +21,10 @@ channels is fixed to 16.
 
 ## Requirements
 Running with Python3.6 and CUDA Version: 11.0
+
+```bash
+pip install --r requirements
+```
 
 ## Usage
 Currently supported methods: local Fourier analysis ('lfa') or explicit ('expl').  
