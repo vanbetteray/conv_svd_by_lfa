@@ -32,10 +32,8 @@ pip install -r requirements.txt
 
 ## Usage
 Two methods are currently supported
-- ```bash
-lfa ``` local Fourier analysis for large-scale, efficient SVD computation 
-- ```bash
-explicit```  Explicit SVD computation for small-scale verification
+- ```bash   lfa ``` local Fourier analysis for large-scale, efficient SVD computation 
+- ```bash   explicit```  Explicit SVD computation for small-scale verification
 
 Example usage: 
 
