@@ -1,4 +1,3 @@
-# helper functions
 import numpy as np
 import torch
 import torch.nn as nn
@@ -105,10 +104,3 @@ def _reshape_tensor(t, c_in, n):
     A = A.T
     return A
 
-
-def _sort_svs(svs):
-    idx_lst = []
-    sort_sv = np.sort(svs.flatten())
-
-    [idx_lst.append(i) for i in range(len(sort_sv))]
-    return sort_sv, idx_lst

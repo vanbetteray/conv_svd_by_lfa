@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 from argparse import ArgumentParser
-from helpers import _create_filter, _reshape_tensor, _sort_svs
+from helpers import _create_filter, _reshape_tensor
 
 
 def explicit_svd(t, n, compute_uv=False):
@@ -80,25 +80,36 @@ def svd_lfa(A, n, compute_uv=False):
 def main(_):
     c = args.c
     n = args.n
-    method = args.method
+    method = args.m
     uv=args.uv
 
     print('unrolled matrix dimension:', c * (n ** 2), '*', c * (n ** 2))
     A, T = _create_filter(c)
 
-    if n < 256 and method == 'e':
+    if method in ['e', 'eonly']:
+        if n >= 256:
+            print("⚠ Explicit SVD is too large for n ≥ 256 — use method='lfa' instead.")
+            return
         svs = explicit_svd(T, n, compute_uv=uv)
-        print('max sv', max(svs))
+        print(f"Explicit calculation complete. Spectral radius: {np.max(np.abs(svs)):.6f}")
+        if method == 'eonly':
+            return
+        else:
+            lfa_svs = svd_lfa(A, n, compute_uv=uv)
+            print(f"LFA calculation complete. Spectral radius: {np.max(np.abs(lfa_svs)):.6f}")
 
     elif method == 'lfa':
         lfa_svs = svd_lfa(A, n, compute_uv=uv)
-        print('max sv', max(lfa_svs.flatten()))
+        print(f"Calculation complete via LFA. Spectral radius: {np.max(np.abs(lfa_svs)):.6f}")
+
+    else:
+        raise ValueError(f"Unknown method '{method}'. Use 'e' (explicit) or 'lfa'.")
 
 
 if __name__ == '__main__':
     parser = ArgumentParser()
 
-    parser.add_argument("--method", "--method", default='lfa', type=str)
+    parser.add_argument("--m", "--method", default='lfa', choices=['lfa', 'e', 'eonly'], type=str)
     parser.add_argument("--c", "--number of channels", default=16, type=int)
     parser.add_argument("--n", "--input size", default=128, type=int)
     parser.add_argument("--uv", "--compute singular vectors", default=False, type=bool)
