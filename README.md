@@ -20,14 +20,19 @@ channels is fixed to 16.
 
 
 ## Requirements
-Running with Python3.6 and CUDA Version: 11.0
+- Python3.6 
+- CUDA Version: 11.0
+- NumPy 
+- PyTorch
 
 ```bash
-pip install --r requirements
+pip install -r requirements.txt
 ```
 
 ## Usage
-Currently supported methods: local Fourier analysis ('lfa') or explicit ('expl').  
+Two methods are currently supported
+- ```bash lfa ``` local Fourier analysis for large-scale, efficient SVD computation 
+- ```bash explicit```  Explicit SVD computation for small-scale verification
 ```bash
 python3 main.py --method 'lfa'
 ```
