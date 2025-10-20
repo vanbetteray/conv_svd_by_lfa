@@ -1,7 +1,4 @@
 # SVD_by_LFA
-## Getting started
-
-***
 
 ## Name
 Singular value decomposition of convolutional layer by local Fourier analysis.
@@ -20,11 +17,14 @@ For more details see https://arxiv.org/pdf/2506.05617
 ![Effect of boundary conditions for increasing input sizes (n = 4, 8, 32; left to right). The number of input and output
 channels is fixed to 16](ims/boundary_cond.png)
 
+## Requirements
+Running with Python3.6 and CUDA Version: 11.0
+
 ## Usage
-Choose method among 'lfa' and 'expl'  
-
+Currently supported methods: local Fourier analysis ('lfa') or explicit ('expl').  
+'''bash
 python3 main.py --method 'lfa'
-
+'''
 
 ## Authors and acknowledgment
 Antonia van Betteray, Matthias Rottmann, Karsten Kahl
