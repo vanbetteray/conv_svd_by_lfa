@@ -26,7 +26,7 @@ channels is fixed to 16.
 - PyTorch
 
 Install dependencies via:
-```bash
+```bash 
 pip install -r requirements.txt
 ```
 
