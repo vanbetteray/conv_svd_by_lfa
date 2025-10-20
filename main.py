@@ -5,6 +5,7 @@ from helpers import _create_filter, _reshape_tensor
 
 def explicit_svd(t, n, uv):
     """
+    Direct computation of singular values
     :param t: weight matrix
     :param n: number of singular values
     :param uv: bool: calculate singular values
@@ -38,16 +39,17 @@ def main(_):
     c = args.c
     n = args.n
     method = args.method
+    uv=args.uv
 
     print('unrolled matrix dimension:', c * (n ** 2), '*', c * (n ** 2))
     A, T = _create_filter(c)
 
     if n < 256 and method == 'e':
-        svs = explicit_svd(T, n, uv=False)
+        svs = explicit_svd(T, n, uv=uv)
         print('max sv', max(svs))
 
     elif method == 'lfa':
-        lfa_svs = svd_lfa(A, n, uv=False)
+        lfa_svs = svd_lfa(A, n, uv=uv)
         print('max sv', max(lfa_svs.flatten()))
 
 if __name__ == '__main__':
@@ -56,6 +58,8 @@ if __name__ == '__main__':
     parser.add_argument("--method", "--method", default='lfa', type=str)
     parser.add_argument("--c", "--number of channels", default=16, type=int)
     parser.add_argument("--n", "--input size", default=128, type=int)
+    parser.add_argument("--uv", "--compute singular vectors", default=False, type=bool)
+
     args = parser.parse_args()
 
     main(args)
