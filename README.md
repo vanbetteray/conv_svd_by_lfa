@@ -24,11 +24,8 @@ Running with Python3.6 and CUDA Version: 11.0
 
 ## Usage
 Currently supported methods: local Fourier analysis ('lfa') or explicit ('expl').  
-'''bash
+```bash
 python3 main.py --method 'lfa'
-'''
-
-## Authors and acknowledgment
-Antonia van Betteray, Matthias Rottmann, Karsten Kahl
+```
 
 
