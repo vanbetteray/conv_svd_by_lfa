@@ -1,5 +1,5 @@
 # SVD_by_LFA
-## Singular value decomposition of convolutional layer by local Fourier analysis.
+## Singular value decomposition of convolutional layers via local Fourier analysis.
 
 ## Description
 This repository provides an eficient framework for computing the singular values (SVD) and optionally the singular vectors of 
@@ -25,6 +25,7 @@ channels is fixed to 16.
 - NumPy 
 - PyTorch
 
+Install dependencies via:
 ```bash
 pip install -r requirements.txt
 ```
@@ -33,8 +34,33 @@ pip install -r requirements.txt
 Two methods are currently supported
 - ```bash lfa ``` local Fourier analysis for large-scale, efficient SVD computation 
 - ```bash explicit```  Explicit SVD computation for small-scale verification
+
+Example usage: 
+
 ```bash
-python3 main.py --method 'lfa'
+python3 main.py --method lfa
 ```
+
+or 
+
+```bash
+python3 main.py --method expl
+```
+
+## Citation 
+
+If you use thies code in your research, please cite:
+
+@misc{vanbetteray2025lfaappliedcnnsefficient,
+      title={LFA applied to CNNs: Efficient Singular Value Decomposition of Convolutional Mappings by Local Fourier Analysis}, 
+      author={Antonia van Betteray and Matthias Rottmann and Karsten Kahl},
+      year={2025},
+      eprint={2506.05617},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2506.05617}, 
+}
+
+
 
 
