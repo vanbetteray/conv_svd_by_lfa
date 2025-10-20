@@ -91,8 +91,7 @@ def _reshape_tensor(t, c_in, n):
         where applying `A @ x.flatten()` is equivalent to applying the convolution.
      Notes
      -----
-     - The resulting matrix `A` is typically very large and should only be constructed for small `n` (e.g., for verification or comparison with LFA).
-     - This method applies the convolution to each canonical basis vector to recover the full operator structure.
+     This method applies the convolution to each canonical basis vector to recover the full operator structure.
      """
 
     c_out = c_in
@@ -105,3 +104,11 @@ def _reshape_tensor(t, c_in, n):
     A = torch.stack(l)
     A = A.T
     return A
+
+
+def _sort_svs(svs):
+    idx_lst = []
+    sort_sv = np.sort(svs.flatten())
+
+    [idx_lst.append(i) for i in range(len(sort_sv))]
+    return sort_sv, idx_lst
