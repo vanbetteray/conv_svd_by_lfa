@@ -52,14 +52,14 @@ python3 main.py --method expl
 If you use this code in your research, please cite:
 
 
-@misc{vanbetteray2025lfaappliedcnnsefficient,  
-      title={LFA applied to CNNs: Efficient Singular Value Decomposition of Convolutional Mappings by Local Fourier Analysis},  
-      author={Antonia van Betteray and Matthias Rottmann and Karsten Kahl},  
-      year={2025},   
-      eprint={2506.05617},   
-      archivePrefix={arXiv},   
-      primaryClass={cs.LG},  
-      url={https://arxiv.org/abs/2506.05617},   
+@inproceedings{vanBetteray2025LFA,  
+  author    = {Antonia van Betteray and Matthias Rottmann and Karsten Kahl},  
+  title     = {LFA Applied to CNNs: Efficient Singular Value Decomposition of Convolutional Mappings by Local Fourier Analysis},  
+  booktitle = {Frontiers in Artificial Intelligence and Applications, Volume 413: ECAI 2025},  
+  pages     = {90--97},  
+  year      = {2025},  
+  doi       = {10.3233/FAIA250793},  
+  publisher = {IOS Press}
 }
 
 
