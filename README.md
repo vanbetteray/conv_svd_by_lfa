@@ -6,7 +6,7 @@ This repository provides an eficient framework for computing the singular values
 convolutional layers using local Fourier analysis (LFA). 
 
 The direct calculation of the SVD of a convolutional layer is typically infeasible because the corresponding weight matrix grows rapidly with increasing input dimensions. 
-B< transferring the convolutional weight tensor into the Fourier domain, this Framework enables efficient and scalabel SVD computation. Note, that this requires periodic
+By transferring the convolutional weight tensor into the Fourier domain, this Framework enables efficient and scalabel SVD computation. Note, that this requires periodic
 boundary conditions (periodic padding) instead of Dirichlet boundary conditions (zero padding). 
 For large input dimensions the influence of boundary conditions becomes negligible (see Figure below).
 
