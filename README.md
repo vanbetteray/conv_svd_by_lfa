@@ -10,7 +10,7 @@ By transferring the convolutional weight tensor into the Fourier domain, this Fr
 boundary conditions (periodic padding) instead of Dirichlet boundary conditions (zero padding). 
 For large input dimensions the influence of boundary conditions becomes negligible (see Figure below).
 
-For theoretical background and derivations visit https://arxiv.org/pdf/2506.05617
+For theoretical background and derivations visit DOI 10.3233/FAIA250793
 
 
 ![Effect of boundary conditions for increasing input sizes (n = 4, 8, 32; left to right). The number of input and output
